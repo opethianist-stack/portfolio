@@ -11,10 +11,10 @@
 profile:
   name: 송무석
   name_en: Song Museok
-  headline: 공교육·고등교육의 AI·디지털 전환을 지원하는 B2G/B2B 교육사업 개발자
+  headline: 공교육·고등교육의 AI·디지털 전환을 지원하는 B2G 교육사업 개발자
   subheadline: RFP 분석부터 컨소시엄 거버넌스, 제안·수주·운영까지 사업 개발 전 과정을 직접 수행합니다.
-  email: ope********@gmail.com
-  phone: 010-****-1396
+  email: opethianist@gmail.com
+  phone: 010-5067-1396
   location: 서울 동작구
   education: 성균관대학교 일반대학원 비교문화협동과정 석사 (2018)
   links:
@@ -35,9 +35,9 @@ kpis:
   total_projects:
     value: 14
     unit: "건"
-    label: "B2G/B2B 사업 제안·수주·운영"
+    label: "B2G 사업 제안·수주·운영"
   average_satisfaction:
-    value: 4.6
+    value: 4.65
     unit: "/ 5.0 이상"
     label: "운영 사업 평균 만족도"
   total_trainees:
@@ -48,7 +48,7 @@ kpis:
     value: "4년 4개월"
     unit: ""
     label: "AI·디지털 교육 도메인 경력"
-    note: "아시아교육협회 + 엘리스그룹 합산"
+    note: ""
 
 # ─────────── 도메인 전문성 6개 ───────────
 domain_expertise_title: "AI·디지털 교육 도메인 전문성"
