@@ -59,6 +59,7 @@ export interface SatisfactionPoint {
   scale: number;
   client: string;
   trainees: number;
+  trainees_label?: string;
 }
 
 export interface RoleSlice {
