@@ -1,0 +1,66 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy-deep: #1a1f30;
+    --navy: #292e41;
+    --navy-mid: #3a4156;
+    --navy-soft: #4d5468;
+    --gray-1: #6b7588;
+    --gray-2: #8491a7;
+    --gray-3: #b8bfcc;
+    --gray-4: #d4d8e1;
+    --gray-5: #e9ecf1;
+    --gray-6: #f1f3f6;
+    --bg: #fafbfc;
+    --bg-card: #ffffff;
+    --accent: #4a6ea3;
+    --accent-soft: #8fa6c9;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--navy);
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'tnum' 1, 'ss01' 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    color: var(--navy-deep);
+  }
+
+  /* Tabular figures for consistent number alignment */
+  .num {
+    font-feature-settings: 'tnum' 1;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply max-w-container mx-auto px-6;
+  }
+
+  /* Section header pattern (used across all sections) */
+  .section-num {
+    @apply text-xs font-semibold tracking-[0.18em] text-accent uppercase pt-2;
+    border-top: 1px solid var(--navy-deep);
+  }
+}

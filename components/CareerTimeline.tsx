@@ -1,0 +1,75 @@
+import SectionHeader from './SectionHeader';
+import type { CareerItem } from '@/lib/types';
+
+interface CareerTimelineProps {
+  items: CareerItem[];
+}
+
+// 카피라이팅 별도 (data.json의 summary는 짧음 — 풀 텍스트는 컴포넌트에서)
+const FULL_SUMMARIES: Record<string, string> = {
+  '엘리스그룹 (주)':
+    '공교육 AI·디지털 전환을 지원하는 B2G/B2B 사업의 PM. KERIS·KOSAC·KICE·KPF·시도교육청 발주 사업 14건을 제안·수주·운영. 6자 컨소시엄 R&R 설계, 누적 80억 원+ 사업 리딩.',
+  '(사)아시아교육협회':
+    "K-12 교육격차 해소 사업과 회원대학 39개교 컨소시엄 채널 관리. 평택시 스마트스쿨 3개년 연속 수주, 민간등록자격 'HTHT맞춤형교육전문가' 신설부터 매출 8,200만 원 사업화까지.",
+  성신여자대학교:
+    '대학혁신지원사업(ACE+, 1~3차년도) 교육과정 개편 실무. AI·디지털 교육 도메인 진입 직전의 고등교육 행정 경험.',
+};
+
+export default function CareerTimeline({ items }: CareerTimelineProps) {
+  return (
+    <section id="career" className="border-b border-gray-5 py-24">
+      <div className="container-page">
+        <SectionHeader
+          num="02 / Career"
+          title="경력"
+          desc="AI·디지털 교육 도메인에서 4년 4개월. 대학 학사운영팀의 교육과정 개편에서 시작해 교육격차 해소 사업을 거쳐, 공교육 AI·디지털 전환 B2G/B2B 사업의 PM으로 이어졌습니다."
+        />
+
+        <div className="relative pl-7">
+          {/* vertical line */}
+          <div className="absolute bottom-1.5 left-1.5 top-1.5 w-px bg-gray-4" aria-hidden />
+
+          {items.map((item, idx) => {
+            const isLast = idx === items.length - 1;
+            const isMuted = item.color === 'muted';
+            const dotBorderColor = isMuted ? '#b8bfcc' : '#1a1f30';
+            const summary = FULL_SUMMARIES[item.company] ?? item.summary;
+
+            return (
+              <div key={item.company} className={isLast ? '' : 'pb-10'}>
+                {/* dot */}
+                <div
+                  className="absolute -ml-7 mt-2 h-3 w-3 rounded-full bg-bg"
+                  style={{ left: 0, border: `2px solid ${dotBorderColor}` }}
+                  aria-hidden
+                />
+
+                <div className="num text-xs font-semibold tracking-[0.04em] text-gray-1">
+                  {item.period}{' '}
+                  <span
+                    className="ml-2 inline-block rounded-full border px-2 py-0.5 text-[11px] font-semibold"
+                    style={{
+                      borderColor: isMuted ? '#8491a7' : '#4a6ea3',
+                      color: isMuted ? '#8491a7' : '#4a6ea3',
+                    }}
+                  >
+                    {item.duration}
+                  </span>
+                </div>
+
+                <div
+                  className="mt-1.5 text-lg font-bold tracking-tight-2"
+                  style={{ color: isMuted ? '#3a4156' : '#1a1f30' }}
+                >
+                  {item.company}
+                </div>
+                <div className="mt-0.5 text-sm text-navy-mid">{item.role}</div>
+                <p className="mt-2.5 max-w-2xl text-sm text-gray-1">{summary}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
