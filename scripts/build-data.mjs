@@ -123,14 +123,18 @@ function buildClients() {
 
 function buildSatisfaction() {
   const rows = readCsv('satisfaction.csv');
-  return rows.map((r) => ({
-    year: r.year,
-    project: r.project,
-    score: toNumber(r.score, 0),
-    scale: toNumber(r.scale, 5),
-    client: r.client,
-    trainees: toNumber(r.trainees, 0),
-  }));
+  return rows.map((r) => {
+    const point = {
+      year: r.year,
+      project: r.project,
+      score: toNumber(r.score, 0),
+      scale: toNumber(r.scale, 5),
+      client: r.client,
+      trainees: toNumber(r.trainees, 0),
+    };
+    if (nonEmpty(r.trainees_label)) point.trainees_label = r.trainees_label;
+    return point;
+  });
 }
 
 function buildCareer() {
