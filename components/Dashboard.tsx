@@ -16,8 +16,8 @@ export default function Dashboard({ clients, roles, satisfaction }: DashboardPro
       <div className="container-page">
         <SectionHeader
           num="01 / Overview"
-          title="사업 개요"
-          desc="누적 사업 규모, 역할 구성, 그리고 만족도의 시간적 추이를 한 화면에 정리했습니다. 2024년 첫 KERIS 사업의 만족도 4.4점에서 2025년 4.67점까지 추세가 일관되게 상승했습니다."
+          title="운영 사업 이력"
+          desc="발주처별 사업 총액, 역할 구성, 만족도 추이를 정리했습니다."
         />
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.2fr_0.8fr]">

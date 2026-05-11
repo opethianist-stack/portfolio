@@ -35,7 +35,6 @@ const KPIS = [
     value: '4,500',
     unit: '명+',
     desc: '누적 교원·학생·멘토 수강자',
-    note: '엘리스 + 아시아교육협회 운영 사업 합산',
   },
 ];
 
@@ -59,7 +58,7 @@ export default function Hero() {
         </h1>
 
         <div className="mt-1.5 text-[13px] font-medium tracking-[0.08em] text-gray-2">
-          Song Museok &nbsp;·&nbsp; B2G/B2B Education Business Developer
+          Song Museok &nbsp;·&nbsp; B2G AX Education Business Developer
         </div>
 
         <p className="mt-6 max-w-3xl text-[20px] font-medium leading-[1.5] tracking-tight-2 text-navy-mid md:text-[22px] lg:text-[26px]">
@@ -69,9 +68,9 @@ export default function Hero() {
         </p>
 
         <p className="mt-4 max-w-2xl text-base leading-[1.65] text-gray-1">
-          KERIS·KICE·KPF·KOSAC·시도교육청 등 정부 산하기관 발주 사업에서 단독 PM·PL·주관기관 역할로
-          누적 80억 원 이상의 사업을 제안·수주·운영해 왔습니다. 운영 사업의 평균 만족도는 4.6점
-          이상입니다.
+          KERIS·KICE·KPF·KOSAC·시도교육청 등 정부 산하기관 발주 사업에서 컨소시엄 구성 및 주관기관으로
+          단독 PM·PL 역할을 맡아 누적 80억 원 이상의 사업을 제안·수주·운영해 왔습니다. 운영 사업의
+          평균 만족도는 4.6점 이상입니다.
         </p>
 
         {/* Domain tags */}

@@ -1,5 +1,5 @@
 const NAV_ITEMS = [
-  { href: '#dashboard', label: '사업 개요' },
+  { href: '#dashboard', label: '운영 사업 이력' },
   { href: '#career', label: '경력' },
   { href: '#clients', label: '발주처' },
   { href: '#projects', label: '프로젝트' },
