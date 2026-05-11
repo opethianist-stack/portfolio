@@ -27,7 +27,7 @@ const yFor = (score: number) =>
 const splitLabel = (project: string, year: string): string[] => {
   if (project.includes('AI 디지털 기반 교육혁신')) return [year, 'AI 디지털 선도교사', '양성연수'];
   if (project.includes('교실혁명')) return [year, '교실혁명'];
-  if (project.includes('찾아가는')) return [year, '찾아가는 컨설팅'];
+  if (project.includes('찾아가는')) return [year, '찾아가는', '학교 컨설팅'];
   if (project.includes('터치교사단')) return [year, '터치교사단'];
   return [year, project.slice(0, 10)];
 };
@@ -57,7 +57,7 @@ export default function LineChart({ data }: LineChartProps) {
         운영 사업 만족도 추이
       </div>
       <div className="mt-1 text-xs leading-[1.5] text-gray-2">
-        사후 만족도 조사가 완료된 4건 시계열 — 누적 2,562명 응답
+        사후 만족도 조사가 완료된 4건 시계열
       </div>
 
       <div className="mt-6">
@@ -115,7 +115,7 @@ export default function LineChart({ data }: LineChartProps) {
             />
           ))}
 
-          {/* value labels */}
+          {/* value labels — 4.5 gridline과 겹치지 않도록 첫 점은 아래로, 나머지는 위로 */}
           <g
             fontFamily="Pretendard, sans-serif"
             fontSize="11"
@@ -124,11 +124,16 @@ export default function LineChart({ data }: LineChartProps) {
             textAnchor="middle"
             style={{ fontFeatureSettings: "'tnum' 1" }}
           >
-            {points.map((p, idx) => (
-              <text key={idx} x={p.x} y={p.y - 14}>
-                {p.score.toFixed(2)}
-              </text>
-            ))}
+            {points.map((p, idx) => {
+              // 4.5 gridline은 y=100. 점이 그 근처(95~105)면 라벨을 아래쪽으로
+              const isNearGridline = Math.abs(p.y - 100) < 18;
+              const yOffset = isNearGridline ? 20 : -14;
+              return (
+                <text key={idx} x={p.x} y={p.y + yOffset}>
+                  {p.score.toFixed(2)}
+                </text>
+              );
+            })}
           </g>
 
           {/* X axis labels */}
@@ -185,7 +190,9 @@ export default function LineChart({ data }: LineChartProps) {
                 <div className="mt-1 text-[11px] leading-[1.4] text-gray-1">
                   {p.project}
                   <br />
-                  수강자 {p.trainees.toLocaleString()}명
+                  {p.trainees_label
+                    ? p.trainees_label
+                    : `수강자 ${p.trainees.toLocaleString()}명`}
                 </div>
               </div>
             );
