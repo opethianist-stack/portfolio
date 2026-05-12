@@ -17,7 +17,6 @@ export default function Dashboard({ clients, roles, satisfaction }: DashboardPro
         <SectionHeader
           num="01 / Overview"
           title="운영 사업 이력"
-          desc="발주처별 사업 총액, 역할 구성, 만족도 추이를 정리했습니다."
         />
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.2fr_0.8fr]">

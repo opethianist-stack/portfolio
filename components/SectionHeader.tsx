@@ -1,7 +1,7 @@
 interface SectionHeaderProps {
   num: string;
   title: string;
-  desc: string;
+  desc?: string;
 }
 
 export default function SectionHeader({ num, title, desc }: SectionHeaderProps) {
@@ -17,7 +17,9 @@ export default function SectionHeader({ num, title, desc }: SectionHeaderProps) 
         <h2 className="text-2xl font-bold tracking-tight-3 text-navy-deep md:text-3xl lg:text-4xl">
           {title}
         </h2>
-        <p className="mt-3.5 max-w-2xl text-base leading-[1.7] text-gray-1">{desc}</p>
+        {desc && (
+          <p className="mt-3.5 max-w-2xl text-base leading-[1.7] text-gray-1">{desc}</p>
+        )}
       </div>
     </div>
   );
