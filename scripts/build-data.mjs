@@ -133,6 +133,7 @@ function buildSatisfaction() {
       trainees: toNumber(r.trainees, 0),
     };
     if (nonEmpty(r.trainees_label)) point.trainees_label = r.trainees_label;
+    if (nonEmpty(r.amount_billion)) point.amount_billion = toNumber(r.amount_billion);
     return point;
   });
 }
@@ -148,6 +149,7 @@ function buildCareer() {
       summary: r.summary,
       color: r.color || 'primary',
     };
+    if (nonEmpty(r.r_and_r)) c.r_and_r = splitArray(r.r_and_r);
     if (nonEmpty(r.show_in_timeline)) c.show_in_timeline = toBool(r.show_in_timeline);
     return c;
   });
