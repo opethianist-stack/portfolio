@@ -38,6 +38,7 @@ export interface CareerItem {
   period: string;
   duration: string;
   summary: string;
+  r_and_r?: string[];
   color: 'primary' | 'secondary' | 'muted';
   show_in_timeline?: boolean;
   show_in_projects?: boolean;
@@ -60,6 +61,7 @@ export interface SatisfactionPoint {
   client: string;
   trainees: number;
   trainees_label?: string;
+  amount_billion?: number;
 }
 
 export interface RoleSlice {
