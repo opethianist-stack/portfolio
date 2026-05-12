@@ -23,7 +23,7 @@ export default function Nav() {
           송무석
           <span className="mx-2 font-normal text-gray-3">·</span>
           <span className="text-[13px] font-medium text-gray-2">
-            B2G/B2B 교육사업 제안 및 운영 전문가
+            B2G Education AX Specialist
           </span>
         </div>
         <ul className="hidden gap-7 md:flex">

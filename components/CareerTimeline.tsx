@@ -12,17 +12,21 @@ export default function CareerTimeline({ items }: CareerTimelineProps) {
         <SectionHeader
           num="02 / Career"
           title="경력"
-          desc="AI·디지털 교육 도메인에서 4년 4개월. 대학 학사운영팀의 교육과정 개편에서 시작해 교육격차 해소 사업을 거쳐, 공교육 AI·디지털 전환 B2G/B2B 사업의 PM으로 이어졌습니다."
+          desc="AI·디지털 교육 도메인에서 4년 4개월. 대학 학사운영팀의 교육과정 개편에서 시작해 교육격차 해소 사업을 거쳐, 공교육 AI·디지털 전환 B2G 사업 및 에듀테크 서비스 세일즈 PM으로 성장했습니다."
         />
 
         <div className="relative pl-7">
           {/* vertical line */}
-          <div className="absolute bottom-1.5 left-1.5 top-1.5 w-px bg-gray-4" aria-hidden />
+          <div
+            className="absolute bottom-1.5 left-1.5 top-1.5 w-px bg-gray-4"
+            aria-hidden
+          />
 
           {items.map((item, idx) => {
             const isLast = idx === items.length - 1;
             const isMuted = item.color === 'muted';
             const dotBorderColor = isMuted ? '#b8bfcc' : '#1a1f30';
+            const hasRAndR = item.r_and_r && item.r_and_r.length > 0;
 
             return (
               <div key={item.company} className={isLast ? '' : 'pb-10'}>
@@ -53,7 +57,31 @@ export default function CareerTimeline({ items }: CareerTimelineProps) {
                   {item.company}
                 </div>
                 <div className="mt-0.5 text-sm text-navy-mid">{item.role}</div>
-                <p className="mt-2.5 max-w-2xl text-sm text-gray-1">{item.summary}</p>
+
+                {/* r_and_r 리스트가 있으면 글머리표로, 없으면 summary 한 줄 */}
+                {hasRAndR ? (
+                  <ul className="mt-3 max-w-2xl list-none">
+                    {item.r_and_r!.map((line, lineIdx) => (
+                      <li
+                        key={lineIdx}
+                        className="relative py-1 pl-4 text-sm leading-[1.6] text-gray-1"
+                      >
+                        <span
+                          className="absolute left-0 top-3 h-px w-2"
+                          style={{ background: '#b8bfcc' }}
+                          aria-hidden
+                        />
+                        {line}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  item.summary && (
+                    <p className="mt-2.5 max-w-2xl text-sm text-gray-1">
+                      {item.summary}
+                    </p>
+                  )
+                )}
               </div>
             );
           })}

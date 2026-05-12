@@ -58,7 +58,7 @@ export default function Hero() {
         </h1>
 
         <div className="mt-1.5 text-[13px] font-medium tracking-[0.08em] text-gray-2">
-          Song Museok &nbsp;·&nbsp; B2G AX Education Business Developer
+          Song Museok &nbsp;·&nbsp; B2G Education AX Business Developer
         </div>
 
         <p className="mt-6 max-w-3xl text-[20px] font-medium leading-[1.5] tracking-tight-2 text-navy-mid md:text-[22px] lg:text-[26px]">

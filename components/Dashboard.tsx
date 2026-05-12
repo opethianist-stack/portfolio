@@ -1,7 +1,7 @@
 import SectionHeader from './SectionHeader';
 import BarChart from './charts/BarChart';
 import DonutChart from './charts/DonutChart';
-import LineChart from './charts/LineChart';
+import SatisfactionCards from './charts/SatisfactionCards';
 import type { ClientItem, RoleSlice, SatisfactionPoint } from '@/lib/types';
 
 interface DashboardProps {
@@ -22,7 +22,7 @@ export default function Dashboard({ clients, roles, satisfaction }: DashboardPro
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.2fr_0.8fr]">
           <BarChart data={clients} />
           <DonutChart data={roles} />
-          <LineChart data={satisfaction} />
+          <SatisfactionCards data={satisfaction} />
         </div>
       </div>
     </section>

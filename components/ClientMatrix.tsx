@@ -19,7 +19,7 @@ export default function ClientMatrix({ items }: ClientMatrixProps) {
         <SectionHeader
           num="03 / Clients"
           title="발주처 포트폴리오"
-          desc="교육부·과기부·문체부 산하 6개 기관 유형. 동일 발주처 2~3년 연속 수주 패턴이 일관되게 나타납니다. KPF 2년 연속(5천만 → 2억으로 4배 확대), 평택시 3년 연속 수주가 대표적입니다."
+          desc="교육부·과기부·문체부 산하 기관에서 AX/DX 분야의 주요 사업을 직접 기획하고 제안하며 실무 영역에서 운영과 정산까지 A to Z 진행한 경험을 보유하고 있습니다."
         />
 
         <div
